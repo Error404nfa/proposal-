@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #proposal {
+        margin-top: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        cursor: pointer;
+    }
+    #congrats {
+        display: none;
+        margin-top: 50px;
+    }
+</style>
+</head>
+<body>
+
+<div id="proposal">
+    <h2>Will you marry me?</h2>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<div id="congrats">
+    <h2>Congratulations!</h2>
+    <p>You are mine now Mrs. Prashant</p>
+</div>
+
+<script>
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        document.getElementById('proposal').style.display = 'none';
+        document.getElementById('congrats').style.display = 'block';
+    });
+
+    document.getElementById('noBtn').addEventListener('click', function() {
+        var xPos = Math.floor(Math.random() * window.innerWidth);
+        var yPos = Math.floor(Math.random() * window.innerHeight);
+        document.getElementById('proposal').style.position = 'absolute';
+        document.getElementById('proposal').style.left = xPos + 'px';
+        document.getElementById('proposal').style.top = yPos + 'px';
+    });
+</script>
+
+</body>
+</html>
